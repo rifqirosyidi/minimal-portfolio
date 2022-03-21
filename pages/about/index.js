@@ -35,10 +35,11 @@ const About = () => {
           <div className="flex-1 max-w-[600px]">
             <p className="font-mono font-bold">Bio.</p>
             <p className="font-primary font-normal text-justify">
-              Hi, I am Rifqi Rosyidi, i'm {new Date().getFullYear() - 1998}.
-              While I'm a proficient Full-Stack Developer, my expertise is in
-              Front End Development Such as HTML/CSS, Responsive Design, UI
-              Design, React.js, Next.js, Gatsby.js.
+              Hi, I am Rifqi Rosyidi, i&lsquo;m{" "}
+              {new Date().getFullYear() - 1998}. While I'm a proficient
+              Full-Stack Developer, my expertise is in Front End Development
+              Such as HTML/CSS, Responsive Design, UI Design, React.js, Next.js,
+              Gatsby.js.
             </p>
             <p className="font-primary font-normal text-justify my-5">
               Currently learning and working on the following technologies:
@@ -56,7 +57,7 @@ const About = () => {
           <p className="flex-1 max-w-[600px]">
             <p className="font-mono font-bold ">Skills.</p>
             <p className="font-primary font-normal my-4">
-              Here's a list of my development skills:
+              Here&lsquo;s a list of my development skills:
             </p>
             <div className="grid grid-cols-4 gap-6">
               <RiHtml5Fill className="text-primary text-4xl" />
@@ -75,7 +76,7 @@ const About = () => {
             </div>
 
             <p className="font-primary font-normal my-4">
-              Here's a list of my design/multimedia skills:
+              Here&lsquo;s a list of my design/multimedia skills:
             </p>
             <div className="grid grid-cols-4 gap-6">
               <SiInkscape className="text-primary text-4xl" />

@@ -111,7 +111,9 @@ export default function Home() {
               hi, i am
             </p>
             <h2 className="flex items-center space-x-10 font-primary text-left md:text-2xl lg:text-7xl xl:text-8xl 2xl:text-[250px] 2xl:font-extralight">
-              <p ref={firstNameRef}>RIFQI </p>
+              <p className="text-sky-500" ref={firstNameRef}>
+                RIFQI{" "}
+              </p>
               <p ref={lastNameRef}>ROSYIDI</p>
             </h2>
             <div className="flex items-center justify-between">

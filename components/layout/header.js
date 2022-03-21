@@ -1,5 +1,6 @@
 import React, { useLayoutEffect, useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import Link from "next/link";
 import Toggle from "../toggle/Toggle";
 
 const Header = () => {
@@ -24,8 +25,8 @@ const Header = () => {
     <>
       <header className="flex items-center h-40 mx-40 ">
         <nav className="flex items-center justify-between w-full">
-          <h2 ref={leftMenuRef}>
-            <p className="font-geometric">home.</p>
+          <h2 className="font-geometric" ref={leftMenuRef}>
+            <Link href="/">home.</Link>
           </h2>
           <div ref={rightMenuRef}>
             <Toggle />

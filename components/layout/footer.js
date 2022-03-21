@@ -2,6 +2,7 @@ import React, { useLayoutEffect, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { CgClose } from "react-icons/cg";
 import GridSvg from "../../assets/svg/GridSvg";
+import Link from "next/link";
 
 const Footer = () => {
   const menuRef = useRef();
@@ -59,33 +60,48 @@ const Footer = () => {
       </div>
       <div
         ref={menuModalRef}
-        className="absolute top-0 left-0 min-h-screen text-zinc-900 bg-white dark:text-white dark:bg-zinc-900 w-screen"
+        className="fixed top-0 left-0 min-h-screen text-zinc-900 bg-white dark:text-white dark:bg-zinc-900 w-screen"
       >
         <div className="grid grid-cols-5">
           <div className="min-h-screen w-full flex items-center justify-center transition-all ease-in-out duration-500 ">
-            <h2 className="font-geometric tracking-widest cursor-pointer transition-all duration-1000 ease-in-out hover:underline py-20 px-10 text-center">
+            <Link
+              href="/"
+              className="font-geometric tracking-widest cursor-pointer transition-all duration-1000 ease-in-out hover:underline py-20 px-10 text-center"
+            >
               home
-            </h2>
+            </Link>
           </div>
           <div className="min-h-screen w-full flex items-center justify-center transition-all ease-in-out duration-500 ">
-            <h2 className="font-geometric tracking-widest cursor-pointer transition-all duration-1000 ease-in-out hover:underline py-20 px-10 text-center">
+            <Link
+              href="/about"
+              className="font-geometric tracking-widest cursor-pointer transition-all duration-1000 ease-in-out hover:underline py-20 px-10 text-center"
+            >
               about
-            </h2>
+            </Link>
           </div>
           <div className="min-h-screen w-full flex items-center justify-center transition-all ease-in-out duration-500 ">
-            <h2 className="font-geometric tracking-widest cursor-pointer transition-all duration-1000 ease-in-out hover:underline py-20 px-10 text-center">
+            <Link
+              href="/work"
+              className="font-geometric tracking-widest cursor-pointer transition-all duration-1000 ease-in-out hover:underline py-20 px-10 text-center"
+            >
               work
-            </h2>
+            </Link>
           </div>
           <div className="min-h-screen w-full flex items-center justify-center transition-all ease-in-out duration-500 ">
-            <h2 className="font-geometric tracking-widest cursor-pointer transition-all duration-1000 ease-in-out hover:underline py-20 px-10 text-center">
+            <Link
+              href="/resume"
+              className="font-geometric tracking-widest cursor-pointer transition-all duration-1000 ease-in-out hover:underline py-20 px-10 text-center"
+            >
               resume
-            </h2>
+            </Link>
           </div>
           <div className="min-h-screen w-full flex items-center justify-center transition-all ease-in-out duration-500 ">
-            <h2 className="font-geometric tracking-widest cursor-pointer transition-all duration-1000 ease-in-out hover:underline py-20 px-10 text-center">
+            <Link
+              href="/contact"
+              className="font-geometric tracking-widest cursor-pointer transition-all duration-1000 ease-in-out hover:underline py-20 px-10 text-center"
+            >
               contact
-            </h2>
+            </Link>
           </div>
         </div>
         <div className="absolute bottom-1/4 right-1/4">
