@@ -5,10 +5,10 @@ export default function Document() {
     <Html>
       <Head />
       <link
-        href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300&family=PT+Mono"
+        href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300&family=PT+Mono&family=Outfit"
         rel="stylesheet"
       />
-      <body className="bg-white text-black dark:bg-stone-900 dark:text-white">
+      <body className="bg-white text-zinc-900 dark:bg-zinc-900 dark:text-white transition-all duration-1000 ease-in-out">
         <Main />
         <NextScript />
       </body>

@@ -1,27 +1,14 @@
 import React from "react";
 import { useTheme } from "next-themes";
 
-const Toggle = ({ to, label, name }) => {
-  const { setTheme } = useTheme();
+const Toggle = () => {
+  const { theme, setTheme } = useTheme();
   return (
     <button
-      className="relative bg-red-300 w-24 text-right group"
-      onClick={() => setTheme(to)}
+      className=" items-center text-right group"
+      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
-      <p
-        className={`absolute right-0 ${
-          label === "NM" && `top-8`
-        } transition duration-500 ease-in-out group-hover:invisible-alpha`}
-      >
-        {label}
-      </p>
-      <p
-        className={`absolute right-0 ${
-          label === "NM" && `top-8`
-        } transition duration-500 ease-in-out hover:delay-500 invisible-alpha group-hover:visible-alpha`}
-      >
-        {name}
-      </p>
+      <p className="font-geometric">{theme}.</p>
     </button>
   );
 };

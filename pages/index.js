@@ -107,8 +107,8 @@ export default function Home() {
             <GridSvg />
           </div>
           <div className="flex flex-col">
-            <p ref={hiRef} className="font-mono text-left p-2.5">
-              Hi, i am
+            <p ref={hiRef} className="font-geometric text-left p-2.5">
+              hi, i am
             </p>
             <h2 className="flex items-center space-x-10 font-primary text-left md:text-2xl lg:text-7xl xl:text-8xl 2xl:text-[250px] 2xl:font-extralight">
               <p ref={firstNameRef}>RIFQI </p>
@@ -119,8 +119,8 @@ export default function Home() {
                 <Socials />
               </div>
 
-              <p ref={summaryRef} className="font-mono text-right p-2.5">
-                Front-End Web Developer
+              <p ref={summaryRef} className="font-geometric text-right p-2.5">
+                front-end web developer
               </p>
             </div>
           </div>
