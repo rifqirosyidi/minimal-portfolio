@@ -33,7 +33,7 @@ const About = () => {
         </div>
         <h2 className="flex items-center space-x-20 mx-40 ">
           <div className="flex-1 max-w-[600px]">
-            <p className="font-mono font-bold">Bio.</p>
+            <p className="font-geometric font-bold">Bio.</p>
             <p className="font-primary font-normal text-justify">
               Hi, I am Rifqi Rosyidi, i&lsquo;m{" "}
               {new Date().getFullYear() - 1998}. While I'm a proficient
@@ -46,7 +46,7 @@ const About = () => {
               Svelte.js, Three.js, and UI Design such as Figma, InkScape, Gimp.
             </p>
 
-            <p className="font-mono font-bold">Socials.</p>
+            <p className="font-geometric font-bold">Socials.</p>
             <div className="flex items-center space-x-4 my-4">
               <Socials />
             </div>
@@ -55,7 +55,7 @@ const About = () => {
             <p>about me.</p>
           </div>
           <p className="flex-1 max-w-[600px]">
-            <p className="font-mono font-bold ">Skills.</p>
+            <p className="font-geometric font-bold ">Skills.</p>
             <p className="font-primary font-normal my-4">
               Here&lsquo;s a list of my development skills:
             </p>

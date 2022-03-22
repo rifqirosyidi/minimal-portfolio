@@ -1,3 +1,11 @@
+#pdf-viewer > .pg-viewer-wrapper {
+  overflow-y: hidden !important;
+}
+
+#pdf-viewer canvas {
+  margin: 0 auto;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

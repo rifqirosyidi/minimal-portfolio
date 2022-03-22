@@ -77,7 +77,7 @@ const Index = () => {
 
                 <p className="mt-4 italic font-geometric">{project.category}</p>
 
-                <button className="bg-sky-500 text-white font-geometric hover:bg-primary-600 font-bold py-2 px-4 rounded shadow-lg shadow-sky-500/50 mt-4">
+                <button className="bg-blue-500 text-white font-geometric hover:bg-primary-600 font-bold py-2 px-4 rounded shadow-lg shadow-blue-500/50 mt-4">
                   More
                 </button>
 

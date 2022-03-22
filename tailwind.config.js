@@ -9,7 +9,6 @@ module.exports = {
       fontFamily: {
         primary: ["Jost", "sans-serif"],
         geometric: ["Outfit", "sans-serif"],
-        mono: ["PT Mono", "monospace"],
       },
     },
   },

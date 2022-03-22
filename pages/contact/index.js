@@ -48,7 +48,7 @@ const Index = () => {
                 />
               </div>
               <div className="flex flex-col space-y-2 mt-4">
-                <button className="bg-sky-500 hover:bg-primary-600 text-white font-bold py-2 px-4 rounded shadow-lg shadow-sky-500/50">
+                <button className="bg-blue-500 hover:bg-primary-600 text-white font-bold py-2 px-4 rounded shadow-lg shadow-blue-500/50">
                   Send
                 </button>
               </div>
