@@ -31,30 +31,14 @@ const About = () => {
         <div className="absolute top-1/2 mx-auto">
           <GridSvg />
         </div>
-        <h2 className="flex items-center space-x-20 mx-40 ">
-          <div className="flex-1 max-w-[600px]">
-            <p className="font-geometric font-bold">Bio.</p>
-            <p className="font-primary font-normal text-justify">
-              Hi, I am Rifqi Rosyidi, i&lsquo;m{" "}
-              {new Date().getFullYear() - 1998}. While I'm a proficient
-              Full-Stack Developer, my expertise is in Front End Development
-              Such as HTML/CSS, Responsive Design, UI Design, React.js, Next.js,
-              Gatsby.js.
-            </p>
-            <p className="font-primary font-normal text-justify my-5">
-              Currently learning and working on the following technologies:
-              Svelte.js, Three.js, and UI Design such as Figma, InkScape, Gimp.
-            </p>
-
-            <p className="font-geometric font-bold">Socials.</p>
-            <div className="flex items-center space-x-4 my-4">
-              <Socials />
-            </div>
-          </div>
-          <div className="flex-1 font-primary text-left md:text-2xl lg:text-7xl xl:text-8xl 2xl:text-[250px] 2xl:font-extralight">
-            <p>about me.</p>
-          </div>
-          <p className="flex-1 max-w-[600px]">
+        <div className="flex items-center justify-center ">
+          <p className="font-primary font-light md:text-2xl lg:text-7xl xl:text-8xl 2xl:text-[250px] 2xl:font-extralight">
+            about
+            <br />
+            <span className="text-blue-500">me.</span>
+          </p>
+        </div>
+        {/* <p className="flex-1 max-w-[600px]">
             <p className="font-geometric font-bold ">Skills.</p>
             <p className="font-primary font-normal my-4">
               Here&lsquo;s a list of my development skills:
@@ -84,8 +68,27 @@ const About = () => {
               <SiFigma className="text-primary text-4xl" />
               <SiKdenlive className="text-primary text-4xl" />
             </div>
+          </p> 
+
+        <div className="flex-1 max-w-[600px]">
+          <p className="font-geometric font-bold">Bio.</p>
+          <p className="font-primary font-normal text-justify">
+            Hi, I am Rifqi Rosyidi, i&lsquo;m {new Date().getFullYear() - 1998}.
+            While I'm a proficient Full-Stack Developer, my expertise is in
+            Front End Development Such as HTML/CSS, Responsive Design, UI
+            Design, React.js, Next.js, Gatsby.js.
           </p>
-        </h2>
+          <p className="font-primary font-normal text-justify my-5">
+            Currently learning and working on the following technologies:
+            Svelte.js, Three.js, and UI Design such as Figma, InkScape, Gimp.
+          </p>
+
+          <p className="font-geometric font-bold">Socials.</p>
+          <div className="flex items-center space-x-4 my-4">
+            <Socials />
+          </div>
+        </div>
+          */}
       </div>
     </Layout>
   );

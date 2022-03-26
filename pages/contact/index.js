@@ -47,7 +47,7 @@ const Index = () => {
                   className="border p-2 border-zinc-100 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-800 rounded font-geometric text-sm"
                 />
               </div>
-              <div className="flex flex-col space-y-2 mt-4">
+              <div className="text-right mt-4">
                 <button className="bg-blue-500 hover:bg-primary-600 text-white font-bold py-2 px-4 rounded shadow-lg shadow-blue-500/50">
                   Send
                 </button>

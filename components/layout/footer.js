@@ -1,8 +1,5 @@
-import React, { useLayoutEffect, useEffect, useRef } from "react";
+import React, { useLayoutEffect, useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
-import { CgClose } from "react-icons/cg";
-import GridSvg from "../../assets/svg/GridSvg";
-import Link from "next/link";
 
 const Footer = () => {
   const menuRef = useRef();
@@ -28,15 +25,10 @@ const Footer = () => {
         ref={menuRef}
         className="flex items-center justify-between space-x-4 mx-40"
       >
-        <button type="button">
-          <p className="font-geometric flex items-center space-x-2">
-            <span className="rotate-180 inline-block">&copy;</span>
-            <span>{new Date().getFullYear()} Rifqi.</span>
-          </p>
-        </button>
-        <button type="button">
-          <p className="font-geometric">top. </p>
-        </button>
+        <p className="font-geometric flex items-center space-x-2">
+          <span className="rotate-180 inline-block">&copy;</span>
+          <span>{new Date().getFullYear()} Rifqi.</span>
+        </p>
       </div>
     </>
   );

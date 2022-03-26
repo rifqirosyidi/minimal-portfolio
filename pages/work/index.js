@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import Tilt from "react-tilt";
 import Layout from "../../components/layout/layout";
 
 const listProjects = [
@@ -62,14 +63,17 @@ const Index = () => {
           <div className="mb-96">
             {listProjects.map((project, i) => (
               <div key={i} className="text-center mt-20">
-                <Image
-                  className="rounded mx-auto"
-                  src="https://picsum.photos/1000/300"
-                  alt="project1"
-                  width={800}
-                  height={300}
-                />
-
+                <div className="w-fit mx-auto">
+                  <Tilt options={{ max: 20, width: 800 }}>
+                    <Image
+                      className="rounded mx-auto"
+                      src="https://picsum.photos/1000/300"
+                      alt="project1"
+                      width={800}
+                      height={300}
+                    />
+                  </Tilt>
+                </div>
                 <h3 className="font-geometric text-2xl my-4">{project.name}</h3>
                 <p className="w-1/3 mx-auto font-primary text-zinc-400 dark:text-zinc-500">
                   {project.description}
@@ -81,7 +85,7 @@ const Index = () => {
                   More
                 </button>
 
-                <div className="border-b w-1/2 mx-auto mt-10" />
+                <div className="border-b w-1/2 border-zinc-300 dark:border-zinc-500 mx-auto mt-10" />
               </div>
             ))}
           </div>
