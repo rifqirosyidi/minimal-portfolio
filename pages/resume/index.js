@@ -62,7 +62,7 @@ const Index = () => {
               Resume.
             </h2>
             <p className="text-center mt-4 font-geometric">
-              Here's a brief summary of my skills, experiences, and other
+              Here&lsquo;s a brief summary of my skills, experiences, and other
               information.
             </p>
             <div className="text-center mt-8">
