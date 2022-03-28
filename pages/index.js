@@ -110,7 +110,7 @@ export default function Home() {
             <p ref={hiRef} className="font-geometric text-left p-2.5">
               hi, i am
             </p>
-            <h2 className="flex items-center space-x-10 font-primary text-left md:text-2xl lg:text-7xl xl:text-8xl 2xl:text-[250px] 2xl:font-extralight">
+            <h2 className="flex items-center space-x-10 font-primary text-left md:text-2xl lg:text-7xl xl:text-8xl xl:font-light 2xl:text-[250px] 2xl:font-extralight">
               <p className="text-blue-500" ref={firstNameRef}>
                 RIFQI{" "}
               </p>

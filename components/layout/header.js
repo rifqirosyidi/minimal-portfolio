@@ -1,15 +1,11 @@
 import React, { useLayoutEffect, useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { CgClose } from "react-icons/cg";
+import { CgChevronRight } from "react-icons/cg";
 import Link from "next/link";
 import Toggle from "../toggle/Toggle";
 import GridSvg from "../../assets/svg/GridSvg";
 
 let menus = [
-  {
-    name: "home",
-    href: "/",
-  },
   {
     name: "about",
     href: "/about",
@@ -32,12 +28,21 @@ const Header = () => {
   const leftMenuRef = useRef();
   const rightMenuRef = useRef();
 
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const listMenuRef = useRef();
+  const menuIconRef = useRef();
 
   const canUseDOM = typeof window !== "undefined";
   const useIsomorphicLayoutEffect = canUseDOM ? useLayoutEffect : useEffect;
 
   let tl = gsap.timeline({
+    defaults: { duration: 1.5, ease: "power1.inOut" },
+  });
+
+  let tl2 = gsap.timeline({
+    defaults: { duration: 1.5, ease: "power1.inOut" },
+  });
+
+  let tl3 = gsap.timeline({
     defaults: { duration: 1.5, ease: "power1.inOut" },
   });
 
@@ -47,67 +52,65 @@ const Header = () => {
       stagger: 0.2,
       y: -200,
     });
+
+    tl2.from(listMenuRef.current.children, {
+      opacity: 0,
+      stagger: 0.2,
+      y: 100,
+    });
+
+    tl3.from(menuIconRef.current, {
+      rotateZ: 180,
+      x: -15,
+    });
   }, []);
 
-  const handleClick = () => {
-    setIsMenuOpen(true);
-  };
+  tl2.reversed(true);
+  tl3.reversed(true);
 
-  const handleClose = () => {
-    setIsMenuOpen(false);
+  const handleClick = () => {
+    tl3.reversed() ? tl3.play() : tl3.reverse();
+    tl2.reversed() ? tl2.play() : tl2.reverse();
   };
 
   return (
     <>
-      <header className="flex items-center h-40 mx-40 ">
+      <header className="flex items-center h-20 mx-40 ">
         <nav className="flex items-center justify-between w-full">
-          <div ref={leftMenuRef} className="flex items-center space-x-4">
+          <div ref={leftMenuRef} className="flex items-center space-x-6">
             <h2 className="font-geometric">
               <Link href="/">home.</Link>
             </h2>
-            <button type="button" onClick={handleClick}>
-              <p className="font-geometric">menu.</p>
-            </button>
+            <div className="relative">
+              <button type="button" onClick={handleClick}>
+                <div className="flex items-center justify-center space-x-6 font-geometric">
+                  <p>menu.</p>{" "}
+                  <div ref={menuIconRef}>
+                    <CgChevronRight />
+                  </div>
+                </div>
+              </button>
+              <div className={`absolute top-0 left-24  h-20  z-50`}>
+                <div
+                  ref={listMenuRef}
+                  className="flex space-x-6 font-geometric items-center"
+                >
+                  {menus.map((menu) => (
+                    <div className="cursor-pointer" key={menu.name}>
+                      <Link href={menu.href} passHref>
+                        <p className="">{menu.name}.</p>
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
           <div ref={rightMenuRef}>
             <Toggle />
           </div>
         </nav>
       </header>
-
-      <div
-        className={`fixed top-0 left-0 min-h-screen text-zinc-900 bg-white dark:text-white dark:bg-zinc-900 w-screen z-50 transition duration-1000 transform translate-y-full ${
-          isMenuOpen && "translate-y-0"
-        }`}
-      >
-        <div className="grid grid-cols-5">
-          {menus.map((menu) => (
-            <div
-              key={menu.name}
-              className="min-h-screen w-full flex items-center justify-center transition-all ease-in-out duration-500 "
-            >
-              <Link href={menu.href} passHref>
-                <p className="font-geometric tracking-widest cursor-pointer transition-all duration-1000 ease-in-out hover:underline py-20 px-10 text-center">
-                  {menu.name}
-                </p>
-              </Link>
-            </div>
-          ))}
-        </div>
-        <div className="absolute bottom-1/4 right-1/4">
-          <GridSvg />
-        </div>
-        <div className="absolute top-1/4 left-1/4">
-          <GridSvg />
-        </div>
-        <button
-          type="button"
-          onClick={handleClose}
-          className="absolute left-0 bottom-20 right-0 mx-auto cursor-pointer"
-        >
-          <CgClose className="text-black dark:text-white mx-auto" />
-        </button>
-      </div>
     </>
   );
 };

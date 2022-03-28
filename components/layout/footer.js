@@ -23,9 +23,9 @@ const Footer = () => {
     <>
       <div
         ref={menuRef}
-        className="flex items-center justify-between space-x-4 mx-40"
+        className="flex items-center justify-center space-x-4 mx-40"
       >
-        <p className="font-geometric flex items-center space-x-2">
+        <p className="font-geometric text-sm flex items-center justify space-x-2">
           <span className="rotate-180 inline-block">&copy;</span>
           <span>{new Date().getFullYear()} Rifqi.</span>
         </p>

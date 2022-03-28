@@ -55,7 +55,7 @@ const Index = () => {
   }, []);
   return (
     <Layout>
-      <div className="py-40 min-h-screen">
+      <div className="py-20 min-h-screen">
         <div className="mx-40">
           <div ref={headingRef}>
             <h2 className="text-center font-geometric text-4xl font-bold ">
