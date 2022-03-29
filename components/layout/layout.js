@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
     <>
       <Header />
       <main className="min-h-screen -mt-20 -mb-10">{children}</main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

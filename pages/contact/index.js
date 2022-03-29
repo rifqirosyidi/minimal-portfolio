@@ -1,7 +1,14 @@
 import React from "react";
+import { useIsomorphicLayoutEffect, useWindowSize } from "react-use";
 import Layout from "../../components/layout/layout";
 
 const Index = () => {
+  const size = useWindowSize();
+
+  useIsomorphicLayoutEffect(() => {
+    document.body.style.height = `${size.height}px`;
+  }, [size.height]);
+
   return (
     <Layout>
       <div className="pt-40 min-h-screen">

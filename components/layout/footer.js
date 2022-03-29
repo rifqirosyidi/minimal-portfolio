@@ -1,11 +1,9 @@
-import React, { useLayoutEffect, useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import { gsap } from "gsap";
+import { useIsomorphicLayoutEffect } from "react-use";
 
 const Footer = () => {
   const menuRef = useRef();
-
-  const canUseDOM = typeof window !== "undefined";
-  const useIsomorphicLayoutEffect = canUseDOM ? useLayoutEffect : useEffect;
 
   let tl = gsap.timeline({
     defaults: { duration: 1.5, ease: "power1.inOut" },

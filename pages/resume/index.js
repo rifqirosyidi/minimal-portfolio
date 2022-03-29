@@ -1,21 +1,18 @@
-import React, { useEffect, useLayoutEffect, useRef } from "react";
+import React, { useRef } from "react";
 import gsap from "gsap";
+import { useIsomorphicLayoutEffect, useWindowSize } from "react-use";
 import Layout from "../../components/layout/layout";
 import dynamic from "next/dynamic";
 import Slide from "react-reveal/Slide";
 import Button from "../../components/general/button/Button";
 import BackToTop from "../../components/navigation/backtotop/BackToTop";
 import GridSvg from "../../assets/svg/GridSvg";
-import Tilt from "react-tilt";
 
 const FileViewer = dynamic(() => import("react-file-viewer"), {
   ssr: false,
 });
 
 const Index = () => {
-  const canUseDOM = typeof window !== "undefined";
-  const useIsomorphicLayoutEffect = canUseDOM ? useLayoutEffect : useEffect;
-
   const headingRef = useRef();
   const pdfRef = useRef();
 
@@ -53,6 +50,12 @@ const Index = () => {
       tl2.reverse();
     });
   }, []);
+
+  const size = useWindowSize();
+  useIsomorphicLayoutEffect(() => {
+    document.body.style.height = `${size.height}px`;
+  }, [size.height]);
+
   return (
     <Layout>
       <div className="py-20 min-h-screen">

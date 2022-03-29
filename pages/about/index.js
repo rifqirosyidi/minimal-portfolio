@@ -20,25 +20,21 @@ import {
   SiPython,
   SiTailwindcss,
 } from "react-icons/si";
+import { useIsomorphicLayoutEffect, useWindowSize } from "react-use";
 import GridSvg from "../../assets/svg/GridSvg";
+import Jumbotron from "../../components/general/jumbotron/Jumbotron";
 import Layout from "../../components/layout/layout";
-import Socials from "../../components/socials/Socials";
 
 const About = () => {
+  const size = useWindowSize();
+
+  useIsomorphicLayoutEffect(() => {
+    document.body.style.height = `${size.height}px`;
+  }, [size.height]);
+
   return (
     <Layout>
-      <div className="flex justify-center items-center min-h-screen">
-        <div className="absolute top-1/2 mx-auto -z-50">
-          <GridSvg />
-        </div>
-        <div className="flex items-center justify-center ">
-          <p className="font-primary font-light md:text-2xl lg:text-7xl xl:text-8xl 2xl:text-[250px] xl:font-light 2xl:font-extralight">
-            <span className="text-blue-500">BIO</span>
-            <br />
-            <span>GRAPHY</span>
-          </p>
-        </div>
-      </div>
+      <Jumbotron firstLabel="BIO" secondLabel="GRAPHY" />
     </Layout>
   );
 };

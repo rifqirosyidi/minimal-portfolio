@@ -1,9 +1,9 @@
-import React, { useLayoutEffect, useState, useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { gsap } from "gsap";
+import { useIsomorphicLayoutEffect } from "react-use";
 import { CgChevronRight } from "react-icons/cg";
 import Link from "next/link";
 import Toggle from "../toggle/Toggle";
-import GridSvg from "../../assets/svg/GridSvg";
 
 let menus = [
   {
@@ -30,9 +30,6 @@ const Header = () => {
 
   const listMenuRef = useRef();
   const menuIconRef = useRef();
-
-  const canUseDOM = typeof window !== "undefined";
-  const useIsomorphicLayoutEffect = canUseDOM ? useLayoutEffect : useEffect;
 
   let tl = gsap.timeline({
     defaults: { duration: 1.5, ease: "power1.inOut" },
@@ -75,7 +72,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="flex items-center h-20 mx-40 ">
+      <header className="relative flex items-center h-20 mx-40 z-50">
         <nav className="flex items-center justify-between w-full">
           <div ref={leftMenuRef} className="flex items-center space-x-6">
             <h2 className="font-geometric">
@@ -90,7 +87,7 @@ const Header = () => {
                   </div>
                 </div>
               </button>
-              <div className={`absolute top-0 left-24  h-20  z-50`}>
+              <div className={`absolute top-0 left-24  h-20 z-50`}>
                 <div
                   ref={listMenuRef}
                   className="flex space-x-6 font-geometric items-center"

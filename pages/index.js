@@ -1,7 +1,8 @@
 import { gsap } from "gsap";
+import { useRef } from "react";
+import { useIsomorphicLayoutEffect, useWindowSize } from "react-use";
 import GridSvg from "../assets/svg/GridSvg";
 import Layout from "../components/layout/layout";
-import { useLayoutEffect, useEffect, useRef } from "react";
 import Socials from "../components/socials/Socials";
 
 export default function Home() {
@@ -12,9 +13,6 @@ export default function Home() {
 
   const firstNameRef = useRef();
   const lastNameRef = useRef();
-
-  const canUseDOM = typeof window !== "undefined";
-  const useIsomorphicLayoutEffect = canUseDOM ? useLayoutEffect : useEffect;
 
   useIsomorphicLayoutEffect(() => {
     let tl = gsap.timeline({
@@ -85,9 +83,14 @@ export default function Home() {
     });
   }, []);
 
+  const size = useWindowSize();
+  useIsomorphicLayoutEffect(() => {
+    document.body.style.height = `${size.height}px`;
+  }, [size.height]);
+
   return (
     <Layout>
-      <div className="flex justify-center items-center min-h-screen">
+      <div className="flex justify-center items-center min-h-screen ">
         <div className="relative">
           <div
             ref={(el) => {
