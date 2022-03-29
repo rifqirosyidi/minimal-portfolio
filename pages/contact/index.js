@@ -55,7 +55,7 @@ const Index = () => {
                 />
               </div>
               <div className="text-right mt-4">
-                <button className="bg-blue-500 hover:bg-primary-600 text-white font-bold py-2 px-4 rounded shadow-lg shadow-blue-500/50">
+                <button className="bg-blue-500 dark:bg-blue-400 hover:bg-primary-600 text-white font-bold py-2 px-4 rounded shadow-lg shadow-blue-500/50">
                   Send
                 </button>
               </div>

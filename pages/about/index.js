@@ -34,7 +34,11 @@ const About = () => {
 
   return (
     <Layout>
-      <Jumbotron firstLabel="BIO" secondLabel="GRAPHY" />
+      <Jumbotron
+        firstLabel="BIO"
+        secondLabel="GRAPHY"
+        description="want to know more about me?"
+      />
     </Layout>
   );
 };
