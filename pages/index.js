@@ -14,6 +14,8 @@ export default function Home() {
   const firstNameRef = useRef();
   const lastNameRef = useRef();
 
+  const isMobile = useWindowSize().width < 768;
+
   let tl = gsap.timeline({
     defaults: { duration: 1.5, ease: "power1.inOut" },
   });
@@ -32,7 +34,7 @@ export default function Home() {
       y: -200,
       rotateX: -90,
     }).from(firstNameRef.current, {
-      x: -200,
+      x: isMobile ? 15.5 : -200,
     });
 
     tl.from(hiRef.current, {
@@ -50,7 +52,7 @@ export default function Home() {
         y: 200,
       })
       .from(lastNameRef.current, {
-        x: 200,
+        x: isMobile ? 15.5 : 200,
       });
 
     tl2
@@ -60,15 +62,15 @@ export default function Home() {
         rotateX: -90,
       })
       .from(summaryRef.current, {
-        x: 100,
+        x: isMobile ? 15 : 100,
       });
 
     tl3
       .from([gridRef.current[0], gridRef.current[1]], {
         opacity: 0,
-        scale: 4,
-        y: 100,
-        x: 40,
+        scale: isMobile ? 1.5 : 4,
+        y: 200,
+        x: isMobile ? 0 : 40,
         stagger: 0.5,
       })
       .from([gridRef.current[0], gridRef.current[1]], {
@@ -90,44 +92,45 @@ export default function Home() {
 
   return (
     <Layout>
-      <div className="flex justify-center items-center min-h-screen ">
-        <div className="relative">
-          <div
-            ref={(el) => {
-              gridRef.current[0] = el;
-            }}
-            className="absolute top-0 -left-10"
-          >
-            <GridSvg />
-          </div>
+      <div className="flex justify-center items-center min-h-screen">
+        <div
+          ref={(el) => {
+            gridRef.current[0] = el;
+          }}
+          className="absolute top-1/2 left-10 sm:left-40"
+        >
+          <GridSvg />
+        </div>
 
-          <div
-            ref={(el) => {
-              gridRef.current[1] = el;
-            }}
-            className="absolute -bottom-8 -right-10"
-          >
-            <GridSvg />
-          </div>
-          <div className="flex flex-col">
-            <p ref={hiRef} className="font-geometric text-left p-2.5">
-              hi, i am
+        <div
+          ref={(el) => {
+            gridRef.current[1] = el;
+          }}
+          className="absolute bottom-1/2 right-10 sm:right-40"
+        >
+          <GridSvg />
+        </div>
+        <div className="flex flex-col">
+          <p ref={hiRef} className="font-geometric text-left p-2.5">
+            hi, i am
+          </p>
+          <h2 className="flex flex-wrap sm:flex-nowrap items-center sm:space-x-10 font-primary font-normal text-left text-7xl lg:text-7xl xl:text-8xl xl:font-light 2xl:text-[250px] 2xl:font-extralight">
+            <p className="text-blue-500" ref={firstNameRef}>
+              RIFQI{" "}
             </p>
-            <h2 className="flex items-center space-x-10 font-primary text-left md:text-2xl lg:text-7xl xl:text-8xl xl:font-light 2xl:text-[250px] 2xl:font-extralight">
-              <p className="text-blue-500" ref={firstNameRef}>
-                RIFQI{" "}
-              </p>
-              <p ref={lastNameRef}>ROSYIDI</p>
-            </h2>
-            <div className="flex items-center justify-between">
-              <div ref={socialRef} className="flex item-center space-x-4">
-                <Socials />
-              </div>
-
-              <p ref={summaryRef} className="font-geometric text-right p-2.5">
-                front-end web developer
-              </p>
+            <p ref={lastNameRef}>ROSYIDI</p>
+          </h2>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center sm:justify-between">
+            <div ref={socialRef} className="flex item-center space-x-4">
+              <Socials />
             </div>
+
+            <p
+              ref={summaryRef}
+              className="font-geometric text-right p-0 my-4 sm:my-0 sm:p-2.5 order-first sm:order-last"
+            >
+              front-end web developer
+            </p>
           </div>
         </div>
       </div>

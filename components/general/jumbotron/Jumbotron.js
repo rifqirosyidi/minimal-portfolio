@@ -1,7 +1,6 @@
 import gsap from "gsap";
-import { parse } from "postcss";
 import React, { useRef } from "react";
-import { useIsomorphicLayoutEffect } from "react-use";
+import { useIsomorphicLayoutEffect, useWindowSize } from "react-use";
 import GridSvg from "../../../assets/svg/GridSvg";
 
 const Jumbotron = ({ firstLabel, secondLabel, description }) => {
@@ -9,6 +8,8 @@ const Jumbotron = ({ firstLabel, secondLabel, description }) => {
   const secondLabelRef = useRef();
   const descriptionRef = useRef();
   const gridRef = useRef([]);
+
+  const isMobile = useWindowSize().width < 768;
 
   const innerText =
     description &&
@@ -32,7 +33,7 @@ const Jumbotron = ({ firstLabel, secondLabel, description }) => {
       y: -200,
       rotateX: -90,
     }).from(firstLabelRef.current, {
-      x: -200,
+      x: isMobile ? 20 : -200,
     });
 
     tl2
@@ -42,7 +43,7 @@ const Jumbotron = ({ firstLabel, secondLabel, description }) => {
         y: 200,
       })
       .from(secondLabelRef.current, {
-        x: 200,
+        x: isMobile ? 60 : 200,
       });
 
     tl2.from(descriptionRef.current.children, {
@@ -71,7 +72,7 @@ const Jumbotron = ({ firstLabel, secondLabel, description }) => {
         ref={(el) => {
           gridRef.current[0] = el;
         }}
-        className="absolute top-1/2 left-40"
+        className="absolute top-1/2 left-10 sm:left-40"
       >
         <GridSvg />
       </div>
@@ -80,7 +81,7 @@ const Jumbotron = ({ firstLabel, secondLabel, description }) => {
         ref={(el) => {
           gridRef.current[1] = el;
         }}
-        className="absolute bottom-1/2 right-40"
+        className="absolute bottom-1/2 right-10 sm:right-40"
       >
         <GridSvg />
       </div>
@@ -88,14 +89,14 @@ const Jumbotron = ({ firstLabel, secondLabel, description }) => {
         <div className="flex flex-col font-primary">
           <p
             ref={firstLabelRef}
-            className="text-blue-500 dark:text-blue-400 font-light md:text-2xl lg:text-7xl xl:text-8xl 2xl:text-[250px] xl:font-light 2xl:font-extralight"
+            className="text-blue-500 dark:text-blue-400 font-medium text-7xl xl:text-8xl 2xl:text-[250px] xl:font-light 2xl:font-extralight"
           >
             {firstLabel}
           </p>
 
           <p
             ref={secondLabelRef}
-            className="font-light md:text-2xl lg:text-7xl xl:text-8xl 2xl:text-[250px] xl:font-light 2xl:font-extralight"
+            className="font-medium text-7xl xl:text-8xl 2xl:text-[250px] xl:font-light 2xl:font-extralight"
           >
             {secondLabel}
           </p>
@@ -105,7 +106,7 @@ const Jumbotron = ({ firstLabel, secondLabel, description }) => {
               dangerouslySetInnerHTML={{
                 __html: innerText.join(" "),
               }}
-              className="font-geometry text-right mt-4 place-self-end text-zinc-600 dark:text-zinc-500 w-[350px]"
+              className="font-geometri text-right mt-4 place-self-end text-zinc-600 dark:text-zinc-500 w-[350px]"
             ></p>
           )}
         </div>

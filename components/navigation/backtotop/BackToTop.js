@@ -22,7 +22,7 @@ const BackToTop = () => {
     };
   }, []);
   return (
-    <div className="fixed bottom-16 right-40">
+    <div className="fixed bottom-16 right-8 sm:right-40">
       <div>
         {scrollPosition > 100 ? (
           <Fade right>

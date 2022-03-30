@@ -1,13 +1,10 @@
 import Image from "next/image";
 import React, { useRef, useEffect } from "react";
-import Link from "next/link";
 import { useIsomorphicLayoutEffect, useWindowSize } from "react-use";
 import Tilt from "react-parallax-tilt";
 import Layout from "../../components/layout/layout";
 import BackToTop from "../../components/navigation/backtotop/BackToTop";
 import Jumbotron from "../../components/general/jumbotron/Jumbotron";
-import styles from "./styles.module.css";
-import Button from "../../components/general/button/Button";
 
 const listProjects = [
   {
@@ -18,7 +15,7 @@ const listProjects = [
     date: "2020",
     defaultImage: "/assets/project-img/devtoopia.png",
     minimalImage: "https://picsum.photos/1000/300",
-    link: "https://picsum.photos/1000/300",
+    link: "https://devtoopia.com",
     type: "Personal",
     category: "Web Development",
   },
@@ -30,7 +27,7 @@ const listProjects = [
     date: "2021",
     defaultImage: "/assets/project-img/quraninui.png",
     minimalImage: "https://picsum.photos/1000/300",
-    link: "https://picsum.photos/1000/300",
+    link: "#",
     type: "Personal",
     category: "UI Design",
   },
@@ -42,7 +39,7 @@ const listProjects = [
     date: "2021",
     defaultImage: "/assets/project-img/quranin.png",
     minimalImage: "https://picsum.photos/1000/300",
-    link: "https://picsum.photos/1000/300",
+    link: "https://quranin.gatsbyjs.io",
     type: "Personal",
     category: "Web Development",
   },
@@ -54,7 +51,7 @@ const listProjects = [
     date: "2018",
     defaultImage: "/assets/project-img/personal-portfolio.png",
     minimalImage: "https://picsum.photos/1000/300",
-    link: "https://picsum.photos/1000/300",
+    link: "https://rifqirosyidi.github.io",
     type: "Personal",
     category: "Front-End Web Development",
   },
@@ -97,7 +94,6 @@ const listProjects = [
   },
 ];
 
-let rafId;
 const Index = () => {
   const size = useWindowSize();
   const appRef = useRef();
@@ -130,7 +126,7 @@ const Index = () => {
     const difference = skewConfigs.current - skewConfigs.rounded;
     const acceleration = difference / size.width;
     const velocity = +acceleration;
-    const skew = velocity * 15;
+    const skew = velocity * 10;
     if (scrollContainer.current !== null) {
       scrollContainer.current.style.transform = `translate3d(0, -${skewConfigs.rounded}px, 0) skewY(${skew}deg)`;
     }
@@ -141,10 +137,10 @@ const Index = () => {
     <Layout>
       <div
         ref={appRef}
-        className="fixed top-0 left-0 w-screen h-screen overflow-hidden"
+        className="fixed top-0 left-4 right-4 h-screen overflow-hidden"
       >
         <div ref={scrollContainer}>
-          <div className="mx-40">
+          <div className="sm:mx-40">
             <Jumbotron
               firstLabel="WORK"
               secondLabel="EXP."
@@ -154,9 +150,12 @@ const Index = () => {
             <div className="mb-96">
               {listProjects.map((project, i) => (
                 <div key={i} className="text-center mt-20">
-                  <div className="relative w-fit mx-auto cursor-pointer group">
+                  <div className="hidden lg:block relative w-fit mx-auto cursor-pointer group">
                     <a href={project.link} passHref>
-                      <Tilt className="parallaxEffect" perspective={1000}>
+                      <Tilt
+                        className="parallaxEffect hover:shadow-lg hover:shadow-blue-400/50"
+                        perspective={1000}
+                      >
                         <Image
                           className="rounded-md mx-auto blur-sm transition duration-1000 group-hover:blur-none brightness-50 group-hover:brightness-100"
                           src={project.defaultImage}
@@ -170,6 +169,22 @@ const Index = () => {
                       </Tilt>
                     </a>
                   </div>
+                  <div className="lg:hidden relative">
+                    <a href={project.link} passHref>
+                      <Image
+                        className="rounded"
+                        src={project.defaultImage}
+                        alt="project1"
+                        width={800}
+                        height={400}
+                      />
+                    </a>
+                    <a href={project.link} passHref>
+                      <h3 className="bottom-0 left-0 right-0 font-geometric text-4xl my-4">
+                        {project.name}
+                      </h3>
+                    </a>
+                  </div>
                   <div className="my-6">
                     <p className="font-geometric text-blue-500 dark:text-blue-400 mb-2">
                       description.
@@ -178,32 +193,40 @@ const Index = () => {
                       {project.description}
                     </p>
                   </div>
-                  <div className="grid grid-cols-4 items-start justify-items-stretch gap-6 w-[800px] mx-auto">
-                    <p className="font-geometric text-blue-500 dark:text-blue-400">
-                      category.
-                    </p>
-                    <p className="font-geometric text-blue-500 dark:text-blue-400">
-                      created at.
-                    </p>
-                    <p className="font-geometric text-blue-500 dark:text-blue-400">
-                      built with.
-                    </p>
-                    <p className="font-geometric text-blue-500 dark:text-blue-400">
-                      type.
-                    </p>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 items-start justify-items-stretch gap-6 sm:w-[800px] mx-auto">
+                    <div>
+                      <p className="font-geometric text-blue-500 dark:text-blue-400">
+                        category.
+                      </p>
+                      <p className="font-primary text-zinc-500 dark:text-zinc-500">
+                        {project.category}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="font-geometric text-blue-500 dark:text-blue-400">
+                        created at.
+                      </p>
+                      <p className="font-primary text-zinc-500 dark:text-zinc-500">
+                        {project.date}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="font-geometric text-blue-500 dark:text-blue-400">
+                        built with.
+                      </p>
+                      <p className="font-primary text-zinc-500 dark:text-zinc-500">
+                        {project.builtWith}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="font-geometric text-blue-500 dark:text-blue-400">
+                        type.
+                      </p>
 
-                    <p className="font-primary text-zinc-500 dark:text-zinc-500">
-                      {project.category}
-                    </p>
-                    <p className="font-primary text-zinc-500 dark:text-zinc-500">
-                      {project.date}
-                    </p>
-                    <p className="font-primary text-zinc-500 dark:text-zinc-500">
-                      {project.builtWith}
-                    </p>
-                    <p className="font-primary text-zinc-500 dark:text-zinc-500">
-                      {project.type}
-                    </p>
+                      <p className="font-primary text-zinc-500 dark:text-zinc-500">
+                        {project.type}
+                      </p>
+                    </div>
                   </div>
                 </div>
               ))}

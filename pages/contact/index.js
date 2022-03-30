@@ -57,13 +57,13 @@ const Index = () => {
             description="If you have any questions or just want to say hi. please fill out the form below."
           />
 
-          <div className="flex items-center justify-center mt-6 w-1/2 mx-auto min-h-screen">
+          <div className="flex items-center justify-center mt-6 sm:w-1/2 mx-auto min-h-screen">
             <form>
-              <h2 className="text-2xl font-geometric font-medium mb-20">
-                contact.
+              <h2 className="text-4xl font-geometric font-medium mb-20">
+                contact form.
               </h2>
               <div className="flex items-center space-x-4 my-4 ">
-                <div className="flex flex-col space-y-2 flex-1">
+                <div className="flex sm:flex-col space-y-2 flex-1">
                   <label className="font-geometric text-sm font-normal">
                     Name
                   </label>
