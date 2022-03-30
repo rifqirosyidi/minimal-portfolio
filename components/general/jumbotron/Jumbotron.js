@@ -17,7 +17,7 @@ const Jumbotron = ({ firstLabel, secondLabel, description }) => {
             {secondLabel}
           </p>
           {description && (
-            <p className="font-geometry mt-4 place-self-end text-zinc-600 dark:text-zinc-400">
+            <p className="font-geometry mt-4 place-self-end text-zinc-600 dark:text-zinc-500">
               {description}
             </p>
           )}

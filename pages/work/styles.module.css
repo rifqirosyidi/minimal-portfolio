@@ -13,3 +13,10 @@
   align-items: center;
   transform: translateZ(60px);
 }
+
+.scrollElement:after {
+  height: 100%;
+  clear: both;
+  content: "";
+  display: block;
+}

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import Link from "next/link";
 import { useIsomorphicLayoutEffect, useWindowSize } from "react-use";
 import Tilt from "react-parallax-tilt";
@@ -110,17 +110,16 @@ const Index = () => {
   };
 
   useIsomorphicLayoutEffect(() => {
-    document.body.style.height = `${
-      scrollContainer.current.getBoundingClientRect().height
-    }px`;
+    setTimeout(() => {
+      document.body.style.height = `${
+        scrollContainer.current !== null &&
+        scrollContainer.current.getBoundingClientRect().height
+      }px`;
+    }, 2000);
   }, [size.height]);
 
   useIsomorphicLayoutEffect(() => {
-    rafId = requestAnimationFrame(() => skewScrolling());
-
-    if (scrollContainer.current === null) {
-      return cancelAnimationFrame(rafId);
-    }
+    requestAnimationFrame(() => skewScrolling());
   }, []);
 
   const skewScrolling = () => {
@@ -162,7 +161,7 @@ const Index = () => {
               {listProjects.map((project, i) => (
                 <div key={i} className="text-center mt-20">
                   <div className="relative w-fit mx-auto cursor-pointer group">
-                    <a href={project.link}>
+                    <a href={project.link} passHref>
                       <Tilt
                         className={styles.parallaxEffect}
                         perspective={1000}

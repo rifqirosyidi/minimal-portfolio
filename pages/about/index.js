@@ -21,7 +21,6 @@ import {
   SiTailwindcss,
 } from "react-icons/si";
 import { useIsomorphicLayoutEffect, useWindowSize } from "react-use";
-import GridSvg from "../../assets/svg/GridSvg";
 import Jumbotron from "../../components/general/jumbotron/Jumbotron";
 import Layout from "../../components/layout/layout";
 

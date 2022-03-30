@@ -14,18 +14,18 @@ export default function Home() {
   const firstNameRef = useRef();
   const lastNameRef = useRef();
 
+  let tl = gsap.timeline({
+    defaults: { duration: 1.5, ease: "power1.inOut" },
+  });
+  let tl2 = gsap.timeline({
+    defaults: { duration: 1.5, ease: "power1.inOut" },
+  });
+
+  let tl3 = gsap.timeline({
+    defaults: { duration: 1.5, ease: "power1.inOut" },
+  });
+
   useIsomorphicLayoutEffect(() => {
-    let tl = gsap.timeline({
-      defaults: { duration: 1.5, ease: "power1.inOut" },
-    });
-    let tl2 = gsap.timeline({
-      defaults: { duration: 1.5, ease: "power1.inOut" },
-    });
-
-    let tl3 = gsap.timeline({
-      defaults: { duration: 1.5, ease: "power1.inOut" },
-    });
-
     // animate first name
     tl.from(firstNameRef.current, {
       opacity: 0,

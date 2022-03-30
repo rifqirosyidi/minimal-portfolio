@@ -17,7 +17,7 @@ const Socials = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <RiGithubLine className="text-primary text-lg hover:scale-125 transform transition duration-500 hover:text-amber-500 dark:hover:text-amber-400 " />
+          <RiGithubLine className="text-primary text-lg hover:scale-125 transform transition duration-500 hover:text-blue-500 dark:hover:text-blue-400 " />
         </a>
       </div>
       <div>
@@ -26,7 +26,7 @@ const Socials = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <RiStackOverflowFill className="text-primary text-lg hover:scale-125 transform transition duration-500 hover:text-amber-500 dark:hover:text-amber-400" />
+          <RiStackOverflowFill className="text-primary text-lg hover:scale-125 transform transition duration-500 hover:text-blue-500 dark:hover:text-blue-400" />
         </a>
       </div>
 
@@ -36,7 +36,7 @@ const Socials = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <RiLinkedinFill className="text-primary text-lg hover:scale-125 transform transition duration-500 hover:text-amber-500 dark:hover:text-amber-400" />
+          <RiLinkedinFill className="text-primary text-lg hover:scale-125 transform transition duration-500 hover:text-blue-500 dark:hover:text-blue-400" />
         </a>
       </div>
       <div>
@@ -45,7 +45,7 @@ const Socials = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <RiEarthLine className="text-primary text-lg hover:scale-125 transform transition duration-500 hover:text-amber-500 dark:hover:text-amber-400" />
+          <RiEarthLine className="text-primary text-lg hover:scale-125 transform transition duration-500 hover:text-blue-500 dark:hover:text-blue-400" />
         </a>
       </div>
 
@@ -55,7 +55,7 @@ const Socials = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <RiInstagramLine className="text-primary text-lg hover:scale-125 transform transition duration-500 hover:text-amber-500 dark:hover:text-amber-400" />
+          <RiInstagramLine className="text-primary text-lg hover:scale-125 transform transition duration-500 hover:text-blue-500 dark:hover:text-blue-400" />
         </a>
       </div>
       <div>
@@ -64,7 +64,7 @@ const Socials = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <RiFacebookFill className="text-primary text-lg hover:scale-125 transform transition duration-500 hover:text-amber-500 dark:hover:text-amber-400" />
+          <RiFacebookFill className="text-primary text-lg hover:scale-125 transform transition duration-500 hover:text-blue-500 dark:hover:text-blue-400" />
         </a>
       </div>
     </>
