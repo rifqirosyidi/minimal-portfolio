@@ -48,6 +48,29 @@
   position: absolute;
 }
 
+.parallaxEffect {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+}
+
+.parallaxInnerElement {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateZ(60px);
+}
+
+.scrollElement:after {
+  height: 100%;
+  clear: both;
+  content: "";
+  display: block;
+}
+
 @-webkit-keyframes nprogress-spinner {
   0% {
     -webkit-transform: rotate(0deg);

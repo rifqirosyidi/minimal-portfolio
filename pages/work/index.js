@@ -144,17 +144,11 @@ const Index = () => {
         className="fixed top-0 left-0 w-screen h-screen overflow-hidden"
       >
         <div ref={scrollContainer}>
-          <div className="mx-40 ">
+          <div className="mx-40">
             <Jumbotron
               firstLabel="WORK"
-              secondLabel="EXPERIENCE"
-              description={
-                <p>
-                  I have a lot of projects and work that I have done.
-                  <br />
-                  here is a list of some of them.
-                </p>
-              }
+              secondLabel="EXP."
+              description="I have a lot of projects and work that I have done. here is a list of some of them."
             />
 
             <div className="mb-96">
@@ -162,10 +156,7 @@ const Index = () => {
                 <div key={i} className="text-center mt-20">
                   <div className="relative w-fit mx-auto cursor-pointer group">
                     <a href={project.link} passHref>
-                      <Tilt
-                        className={styles.parallaxEffect}
-                        perspective={1000}
-                      >
+                      <Tilt className="parallaxEffect" perspective={1000}>
                         <Image
                           className="rounded-md mx-auto blur-sm transition duration-1000 group-hover:blur-none brightness-50 group-hover:brightness-100"
                           src={project.defaultImage}
@@ -173,9 +164,7 @@ const Index = () => {
                           width={800}
                           height={300}
                         />
-                        <h3
-                          className={`${styles.parallaxInnerElement} absolute parallax-inner-element drop-shadow-md top-0 bottom-0 left-0 right-0 font-geometric text-white text-5xl`}
-                        >
+                        <h3 className="parallaxInnerElement absolute parallax-inner-element drop-shadow-md top-0 bottom-0 left-0 right-0 font-geometric text-white text-5xl">
                           {project.name}
                         </h3>
                       </Tilt>

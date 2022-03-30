@@ -35,7 +35,7 @@ const About = () => {
     <Layout>
       <Jumbotron
         firstLabel="BIO"
-        secondLabel="GRAPHY"
+        secondLabel="GRAPHY."
         description="want to know more about me?"
       />
     </Layout>

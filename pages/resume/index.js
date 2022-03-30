@@ -7,6 +7,7 @@ import Slide from "react-reveal/Slide";
 import Button from "../../components/general/button/Button";
 import BackToTop from "../../components/navigation/backtotop/BackToTop";
 import GridSvg from "../../assets/svg/GridSvg";
+import Jumbotron from "../../components/general/jumbotron/Jumbotron";
 
 const FileViewer = dynamic(() => import("react-file-viewer"), {
   ssr: false,
@@ -60,15 +61,15 @@ const Index = () => {
     <Layout>
       <div className="py-20 min-h-screen">
         <div className="mx-40">
+          <Jumbotron
+            firstLabel="RESUME"
+            secondLabel="FOLIO."
+            description="Here&lsquo;s a brief summary of my skills, experiences, and other
+              information."
+          />
+
           <div ref={headingRef}>
-            <h2 className="text-center font-geometric text-4xl font-bold ">
-              Resume.
-            </h2>
-            <p className="text-center mt-4 font-geometric">
-              Here&lsquo;s a brief summary of my skills, experiences, and other
-              information.
-            </p>
-            <div className="text-center mt-8">
+            <div className="flex justify-center mt-8">
               <Slide bottom>
                 <Button asLink href="/rifqi-rosyidi-resume.pdf">
                   Download
@@ -89,9 +90,7 @@ const Index = () => {
           </div>
         </div>
       </div>
-      <div className="absolute top-1/2 left-96 mx-auto -z-50">
-        <GridSvg width={20} height={20} space={20} />
-      </div>
+
       <BackToTop />
     </Layout>
   );

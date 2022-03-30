@@ -12,14 +12,14 @@ const Button = ({
       {asLink ? (
         <a
           href={href}
-          className="block mx-auto w-fit font-geometric bg-blue-600 hover:bg-primary-600 text-white py-2 px-4 rounded shadow-lg shadow-blue-500/50"
+          className="block w-fit font-geometric bg-blue-600 hover:bg-primary-600 text-white py-2 px-4 rounded shadow-lg shadow-blue-500/50"
         >
           {children}
         </a>
       ) : (
         <button
           {...props}
-          className="block mx-auto w-fit font-geometric bg-blue-600 hover:bg-primary-600 text-white py-2 px-4 rounded shadow-lg shadow-blue-500/50"
+          className="block w-fit font-geometric bg-blue-600 hover:bg-primary-600 text-white py-2 px-4 rounded shadow-lg shadow-blue-500/50"
         >
           {children}
         </button>
