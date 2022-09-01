@@ -71,8 +71,8 @@ const About = () => {
                 these areas especialy in computer & technology.
               </p>
               <p className="mt-4">
-                However I wasn't admitted to the college of my dreams. But i
-                manage to get to one of private university with scholarship in
+                However I wasn&apos;t admitted to the college of my dreams. But
+                i manage to get to one of private university with scholarship in
                 Malang, I was a student of Sistem Informasi at STMIK Pradnya
                 Paramita Malang, and I feel very happy about it.
               </p>
