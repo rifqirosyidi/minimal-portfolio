@@ -7,6 +7,8 @@ import {
   RiLinkedinFill,
   RiStackOverflowFill,
 } from "react-icons/ri";
+import { FaHackerrank, FaDev, FaMediumM } from "react-icons/fa";
+
 const Socials = () => {
   return (
     <>
@@ -32,11 +34,30 @@ const Socials = () => {
 
       <div>
         <a
+          href="https://www.hackerrank.com/rief_rosyidi"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaHackerrank className="text-primary text-lg hover:scale-125 transform transition duration-500 hover:text-blue-500 dark:hover:text-blue-400" />
+        </a>
+      </div>
+
+      <div>
+        <a
           href="https://id.linkedin.com/in/rifqi-rosyidi-125804169"
           target="_blank"
           rel="noopener noreferrer"
         >
           <RiLinkedinFill className="text-primary text-lg hover:scale-125 transform transition duration-500 hover:text-blue-500 dark:hover:text-blue-400" />
+        </a>
+      </div>
+      <div>
+        <a
+          href="https://medium.com/@rief.rosyidi"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaMediumM className="text-primary text-lg hover:scale-125 transform transition duration-500 hover:text-blue-500 dark:hover:text-blue-400" />
         </a>
       </div>
       <div>

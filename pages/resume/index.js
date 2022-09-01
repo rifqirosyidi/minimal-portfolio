@@ -8,6 +8,8 @@ import Button from "../../components/general/button/Button";
 import BackToTop from "../../components/navigation/backtotop/BackToTop";
 import GridSvg from "../../assets/svg/GridSvg";
 import Jumbotron from "../../components/general/jumbotron/Jumbotron";
+import { Line } from "rc-progress";
+import Image from "next/image";
 
 const FileViewer = dynamic(() => import("react-file-viewer"), {
   ssr: false,
@@ -67,9 +69,131 @@ const Index = () => {
             description="Here&lsquo;s a brief summary of my skills, experiences, and other
               information."
           />
+          <div className="grid grid-cols-7 gap-6">
+            <div className="relative">
+              <Line
+                percent={95}
+                strokeWidth={4}
+                trailColor="#fc4a0bdd"
+                strokeColor="#fc4a0bdd"
+                strokeLinecap="square"
+              />
+              <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <Image
+                  src="/assets/skill-logo/html.png"
+                  layout="fixed"
+                  width={50}
+                  height={50}
+                />
+              </div>
+            </div>
+            <div className="relative">
+              <Line
+                percent={95}
+                strokeWidth={4}
+                trailColor="#2195f2dd"
+                strokeColor="#2195f2dd"
+                strokeLinecap="square"
+              />
+              <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <Image
+                  src="/assets/skill-logo/css-3.png"
+                  layout="fixed"
+                  width={50}
+                  height={50}
+                />
+              </div>
+            </div>
+            <div className="relative">
+              <Line
+                percent={90}
+                strokeWidth={4}
+                trailColor="#ffde00dd"
+                strokeColor="#ffde00dd"
+                strokeLinecap="square"
+              />
+              <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <Image
+                  src="/assets/skill-logo/js.png"
+                  layout="fixed"
+                  width={50}
+                  height={50}
+                />
+              </div>
+            </div>
+            <div className="relative">
+              <Line
+                percent={86}
+                strokeWidth={4}
+                trailColor="#757ab2dd"
+                strokeColor="#757ab2dd"
+                strokeLinecap="square"
+              />
+              <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <Image
+                  src="/assets/skill-logo/php.png"
+                  layout="fixed"
+                  width={50}
+                  height={50}
+                />
+              </div>
+            </div>
+            <div className="relative">
+              <Line
+                percent={84}
+                strokeWidth={4}
+                trailColor="#0f7d93dd"
+                strokeColor="#0f7d93dd"
+                strokeLinecap="square"
+              />
+              <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <Image
+                  src="/assets/skill-logo/mysql.png"
+                  layout="fixed"
+                  width={50}
+                  objectFit="cover"
+                  height={50}
+                />
+              </div>
+            </div>
+            <div className="relative">
+              <Line
+                percent={90}
+                strokeWidth={4}
+                trailColor="#f14e32dd"
+                strokeColor="#f14e32dd"
+                strokeLinecap="square"
+              />
+              <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <Image
+                  src="/assets/skill-logo/git.png"
+                  layout="fixed"
+                  width={50}
+                  height={50}
+                />
+              </div>
+            </div>
+            <div className="relative">
+              <Line
+                percent={95}
+                strokeWidth={4}
+                trailColor="#5bd1f0dd"
+                strokeColor="#5bd1f0dd"
+                strokeLinecap="square"
+              />
+              <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <Image
+                  src="/assets/skill-logo/react.png"
+                  layout="fixed"
+                  width={50}
+                  height={50}
+                />
+              </div>
+            </div>
+          </div>
 
           <div ref={headingRef}>
-            <div className="flex justify-center mt-8">
+            <div className="flex justify-center mt-20">
               <Slide bottom>
                 <Button asLink href="/rifqi-rosyidi-resume.pdf">
                   Download

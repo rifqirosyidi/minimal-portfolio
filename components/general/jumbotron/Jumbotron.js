@@ -106,7 +106,7 @@ const Jumbotron = ({ firstLabel, secondLabel, description }) => {
               dangerouslySetInnerHTML={{
                 __html: innerText.join(" "),
               }}
-              className="font-geometri text-right mt-4 place-self-end text-zinc-600 dark:text-zinc-500 w-[350px]"
+              className="font-geometri text-right mt-4 place-self-end text-zinc-600 dark:text-zinc-300 w-[350px]"
             ></p>
           )}
         </div>
