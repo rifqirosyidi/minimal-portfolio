@@ -51,7 +51,7 @@ const About = () => {
           <Fade bottom>
             <p className="mt-4 text-zinc-600 dark:text-zinc-400 font-primary">
               I was born in Lamongan, I do not remember much of my early
-              childhood, but my mom said I was very active, communicative, but
+              childhood, my mom said I was very active, communicative, but
               very curious. I would ask some of questions that seems very unique
               to my mother. I do remember when my father also buy me the first
               bicycle. it was fun.

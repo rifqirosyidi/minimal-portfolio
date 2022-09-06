@@ -55,9 +55,7 @@ const Jumbotron = ({ firstLabel, secondLabel, description }) => {
     tl3
       .from([gridRef.current[0], gridRef.current[1]], {
         opacity: 0,
-        scale: 4,
         y: 100,
-        x: 40,
         stagger: 0.5,
       })
       .from([gridRef.current[0], gridRef.current[1]], {
