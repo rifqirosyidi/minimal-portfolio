@@ -109,7 +109,7 @@ const Header = () => {
                   >
                     {menus.map((menu) => (
                       <div
-                        className="cursor-pointer text-zinc-900 dark:text-white border-b border-zinc-300 p-2 sm:p-0 sm:border-none"
+                        className="z-50 cursor-pointer text-zinc-900 dark:text-white shadow-sm sm:shadow-none dark:shadow-none bg-white sm:bg-transparent dark:bg-zinc-800 sm:dark:bg-transparent rounded-md border-zinc-500 p-2 sm:p-0 sm:border-none"
                         key={menu.name}
                       >
                         <Link href={menu.href} passHref>

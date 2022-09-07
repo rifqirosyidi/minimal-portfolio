@@ -33,7 +33,7 @@ const Jumbotron = ({ firstLabel, secondLabel, description }) => {
       y: -200,
       rotateX: -90,
     }).from(firstLabelRef.current, {
-      x: isMobile ? 20 : -200,
+      x: isMobile ? 10 : -200,
     });
 
     tl2
@@ -43,7 +43,7 @@ const Jumbotron = ({ firstLabel, secondLabel, description }) => {
         y: 200,
       })
       .from(secondLabelRef.current, {
-        x: isMobile ? 60 : 200,
+        x: isMobile ? 20 : 200,
       });
 
     tl2.from(descriptionRef.current.children, {

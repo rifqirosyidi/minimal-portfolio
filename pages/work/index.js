@@ -71,7 +71,7 @@ const listProjects = [
     builtWith: "HTML, CSS, Three.js, GSAP",
     date: "2020",
     defaultImage: "/assets/project-img/3dportfolio.png",
-    link: "https://picsum.photos/1000/300",
+    link: "https://tiny-sable-9f4f93.netlify.app/",
     type: "Personal",
     category: "3D Web Development",
   },
@@ -116,9 +116,14 @@ const Index = () => {
                 <div key={i} className="text-center mt-20">
                   <Fade bottom>
                     <div className="hidden lg:block relative w-fit h-full mx-auto cursor-pointer group">
-                      <a href={project.link} passHref>
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        passHref
+                      >
                         <Image
-                          className=" mx-auto blur-sm transition duration-1000 group-hover:blur-none brightness-50 group-hover:brightness-100"
+                          className="mx-auto blur-sm transition duration-1000 group-hover:blur-none brightness-50 group-hover:brightness-100"
                           src={project.defaultImage}
                           alt="project1"
                           width={800}
@@ -132,36 +137,37 @@ const Index = () => {
                     <div className="lg:hidden relative">
                       <a href={project.link} passHref>
                         <Image
-                          className=""
+                          className="rounded-sm"
                           src={project.defaultImage}
                           alt="project1"
                           width={800}
                           height={400}
                         />
                       </a>
-                      <a href={project.link} passHref>
-                        <h3 className="bottom-0 left-0 right-0 font-geometric text-4xl my-4">
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        passHref
+                      >
+                        <h3 className="text-left sm:text-center font-geometric text-3xl my-4">
                           {project.name}
                         </h3>
                       </a>
                     </div>
                     <div className="my-6">
-                      <p className="font-geometric mb-2">description.</p>
-                      <p className="font-primary text-center text-zinc-500 w-[420px] mx-auto">
+                      <p className="hidden sm:block font-geometric mb-2">
+                        {project.date}
+                      </p>
+                      <p className="font-primary text-left sm:text-center text-zinc-500 w-full sm:w-[420px] mx-auto">
                         {project.description}
                       </p>
                     </div>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 items-start justify-items-stretch gap-6 mx-auto">
+                    <div className="grid grid-cols-2 items-start text-left sm:text-center justify-items-stretch gap-6 mx-auto">
                       <div>
                         <p className="font-geometric">category.</p>
                         <p className="font-primary text-zinc-500 dark:text-zinc-500">
                           {project.category}
-                        </p>
-                      </div>
-                      <div>
-                        <p className="font-geometric">created at.</p>
-                        <p className="font-primary text-zinc-500 dark:text-zinc-500">
-                          {project.date}
                         </p>
                       </div>
                       <div>
