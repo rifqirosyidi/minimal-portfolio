@@ -14,6 +14,7 @@ const Button = ({
         <a
           href={href}
           target={openNewTab ? "_blank" : "_self"}
+          rel="noreferrer"
           className="block w-fit font-geometric bg-blue-600 hover:bg-primary-600 text-white py-2 px-4 rounded shadow-lg shadow-blue-500/50"
         >
           {children}
