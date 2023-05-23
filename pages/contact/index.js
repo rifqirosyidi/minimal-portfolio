@@ -51,6 +51,7 @@ const Index = () => {
             </label>
             <textarea
               placeholder="Enter your message"
+              name="message"
               className="border p-2 border-zinc-100 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-800 rounded font-geometric text-sm"
             />
           </div>
