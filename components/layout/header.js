@@ -17,6 +17,10 @@ let menus = [
     href: "/about",
   },
   {
+    name: "blog",
+    href: "/blog"
+  },
+  {
     name: "work",
     href: "/work",
   },
@@ -85,7 +89,7 @@ const Header = () => {
             <div className="relative">
               <button type="button" onClick={handleClick}>
                 <div className="flex items-center justify-center sm:space-x-6 font-geometric">
-                  <p>menu.</p>{" "}
+                  <p>menu</p>
                   <Tween
                     playState={playState}
                     to={{ rotation: 180 }}
@@ -113,7 +117,7 @@ const Header = () => {
                         key={menu.name}
                       >
                         <Link href={menu.href} passHref>
-                          <p className="">{menu.name}.</p>
+                          <p className="">{menu.name}</p>
                         </Link>
                       </div>
                     ))}
